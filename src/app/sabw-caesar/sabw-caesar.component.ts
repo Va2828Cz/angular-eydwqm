@@ -11,7 +11,9 @@ export class SabwCaesarComponent implements OnInit {
   rotation = 'rotate(318.4615384615384615384615deg)';
 
   dreheScheibe(){
-    console.log("Hallo");
+    /* console.log("Hallo"); */
+    this.rotation = 'rotate(' ')';
+    int dag = 360 - 360 / 26 * this.zahl;
   }
 
   constructor() { }

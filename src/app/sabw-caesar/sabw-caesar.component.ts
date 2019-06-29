@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class SabwCaesarComponent implements OnInit {
   zahl = 12;
 
+  rotation = 'rotate(318.4615384615384615384615deg)';
+
   dreheScheibe(){
     console.log("Hallo");
   }

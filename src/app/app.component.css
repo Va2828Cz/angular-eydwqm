@@ -1,0 +1,21 @@
+
+p {
+	color: blue;
+	background-color: yellow;
+	height: 100px;
+	//width: 250px;
+	>//transform: rotate(45deg);
+	border: 1px solid black;
+}
+	ul {
+	color: blue;
+	background-color: yellow;
+	height: 100px;
+	widht: 400px;
+	border: 1px solid black;
+}
+#gscheib {
+width: 400px;
+height: 400px;
+
+}

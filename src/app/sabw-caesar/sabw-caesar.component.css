@@ -12,6 +12,7 @@
   height: 400px;
   position: absolute;
   /*transform: rotate(318.4615384615384615384615deg);*/
+  transition: all 2s;
 }
 #box{
   height: 400px;

@@ -9,7 +9,7 @@ export class FermatTestComponent implements OnInit {
 
   versuchskaninchen: number = 13;
   anzahl: number = 15;
-  ergebnis = "Die Zahl ";
+  ergebnis = "";
 
   constructor() { }
 
@@ -21,16 +21,17 @@ export class FermatTestComponent implements OnInit {
 
       zwischenergebnis = zwischenergebnis * zeuge;
     }
+     zwischenergebnis = zwischenergebnis % this.versuchskaninchen;
     if (zwischenergebnis === 1) {
-      this.ergebnis += this.versuchskaninchen + ' ist wahrscheinlich eine Primzahl';
+      this.ergebnis += 'Die Zahl ' + this.versuchskaninchen + ' ist wahrscheinlich eine Primzahl.';
 
     } else {
-      this.ergebnis += this.versuchskaninchen + ' ist wahrscheinlich keine Primzahl';
+      this.ergebnis += 'Die Zahl ' + this.versuchskaninchen + ' ist keine Primzahl.';
 
     }
 
 
-    //zwischenergebnis = zwischenergebnis % this.versuchskaninchen;
+    zwischenergebnis = zwischenergebnis % this.versuchskaninchen;
     //this.ergebnis = 'Zwischenergebnis:' + zwischenergebnis;
 
   }

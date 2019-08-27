@@ -1,7 +1,16 @@
-<h1>Fermat-Test</h1>
-<p>
-fermat-test works!
+<h1><u>Fermat-Test</u></h1>
+<p id= "#hintergrundf" >
 </p>
 <form>
-  <input name="versuchskaninchen" [(ngModel)]="versuchskaninchen" />
+ Zu testende Primzahl: <input name="versuchskaninchen" [(ngModel)]="versuchskaninchen" />
+
+<br/>
+
+ Durchführanzahl <input name="anzahl" [(ngModel)]="anzahl" />
+ <br/>
+ <button>Prüfdurchgang starten</button>
 </form>
+<p id= "hintergrundf" >
+ Ergebnis:
+</p>
+{{ergebnis}}

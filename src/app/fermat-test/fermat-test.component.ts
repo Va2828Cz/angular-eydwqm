@@ -9,12 +9,29 @@ export class FermatTestComponent implements OnInit {
 
   versuchskaninchen: number = 13;
   anzahl: number = 15;
-  ergebnis = "na";
+  ergebnis = "Die Zahl";
 
   constructor() { }
 
   fermattest() {
-    this.ergebnis = 'starte test';
+    let zeuge = 2;
+    //Berechne zeuge^(versuchskaninchen-1) moidulo Versuchskaninchen
+    let zwischenergebnis =1;
+    for(let i = 0; i < this.versuchskaninchen-1; i++){
+
+      zwischenergebnis = zwischenergebnis * zeuge;
+    }
+    if(zwischenergebnis === 1) {
+      this.ergebnis += zeuge + 'ist wahrscheinlich eine Primzahl';
+
+    }else{
+      this.ergebnis += zeuge + 'ist wahrscheinlich keine Primzahl';
+
+    }
+
+
+    //zwischenergebnis = zwischenergebnis % this.versuchskaninchen;
+    //this.ergebnis = 'Zwischenergebnis:' + zwischenergebnis;
 
   }
 

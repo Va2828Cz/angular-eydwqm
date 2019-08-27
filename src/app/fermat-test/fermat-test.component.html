@@ -8,9 +8,11 @@
 
  Durchführanzahl <input name="anzahl" [(ngModel)]="anzahl" />
  <br/>
- <button>Prüfdurchgang starten</button>
+ <button (click)="fermattest()" >Prüfdurchgang starten</button>
 </form>
-<p id= "hintergrundf" >
+<p>
  Ergebnis:
 </p>
+<textarea id= "hintergrundf" >
 {{ergebnis}}
+</textarea>

@@ -21,3 +21,24 @@
 h1{
   color: #0B074E
 }
+
+p {
+	color: blue;
+	background-color: #82FA58;
+	height: 100px;
+	/*width: 250px;
+	transform: rotate(45deg); */
+	border: 1px solid black;
+}
+	ul {
+	color: blue;
+	background-color: #0B610B;
+	height: 100px;
+	widht: 400px;
+	border: 1px solid black;
+}
+#gscheib {
+width: 400px;
+height: 400px;
+
+}

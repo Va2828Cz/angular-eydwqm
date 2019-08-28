@@ -8,31 +8,45 @@ import { Component, OnInit } from '@angular/core';
 export class FermatTestComponent implements OnInit {
 
   versuchskaninchen: number = 13;
-  anzahl: number = 15;
+  anzahl: number = 3;
   ergebnis = "";
 
   constructor() { }
 
   fermattest() {
-    let zeuge = 2;
-    //Berechne zeuge^(versuchskaninchen-1) moidulo Versuchskaninchen
-    let zwischenergebnis = 1;
-    for (let i = 0; i < this.versuchskaninchen - 1; i++) {
 
-      zwischenergebnis = zwischenergebnis * zeuge;
+    let endergebnis = true;
+
+    for (let zeuge = 2; zeuge < this.anzahl + 2; zeuge++) {
+
+
+
+      //Berechne zeuge^(versuchskaninchen-1) moidulo Versuchskaninchen
+      let zwischenergebnis = 1;
+
+      for (let i = 0; i < this.versuchskaninchen - 1; i++) {
+
+        zwischenergebnis = zwischenergebnis * zeuge;
+      }
+      zwischenergebnis = zwischenergebnis % this.versuchskaninchen;
+      if (zwischenergebnis === 1) {
+       this.ergebnis += ' Zeuge ' + zeuge + ': OK ';
+
+      } else {
+        //this.ergebnis += 'Die Zahl ' + this.versuchskaninchen + ' ist laut Zeuge' + zeuge + ' keine Primzahl.';
+        endergebnis = false;
+        zeuge = this.anzahl + 2 ;
+
+      }
     }
-     zwischenergebnis = zwischenergebnis % this.versuchskaninchen;
-    if (zwischenergebnis === 1) {
-      this.ergebnis += 'Die Zahl ' + this.versuchskaninchen + ' ist wahrscheinlich eine Primzahl.';
 
-    } else {
-      this.ergebnis += 'Die Zahl ' + this.versuchskaninchen + ' ist keine Primzahl.';
+    if(endergebnis === true){
 
+      this.ergebnis += 'Die Zahl ' + this.versuchskaninchen + ' ist wahrscheinlich eine Primzahl. '
+    }else{
+      this.ergebnis += 'Die Zahl ' + this.versuchskaninchen + ' ist keine Primzahl. '
     }
-
-
-    zwischenergebnis = zwischenergebnis % this.versuchskaninchen;
-    //this.ergebnis = 'Zwischenergebnis:' + zwischenergebnis;
+       
 
   }
 

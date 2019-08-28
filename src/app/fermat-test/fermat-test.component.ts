@@ -14,39 +14,43 @@ export class FermatTestComponent implements OnInit {
   constructor() { }
 
   fermattest() {
+    if (this.anzahl > this.versuchskaninchen) {
+      this.ergebnis = 'Fehler: Durchführanzahl ist größer als Zahl';
 
-    let endergebnis = true;
+    } else {
+      let endergebnis = true;
 
-    for (let zeuge = 2; zeuge < this.anzahl + 2; zeuge++) {
+      for (let zeuge = 2; zeuge < this.anzahl + 2; zeuge++) {
+
+
+        //Berechne zeuge^(versuchskaninchen-1) moidulo Versuchskaninchen
+        let zwischenergebnis = 1;
 
 
 
-      //Berechne zeuge^(versuchskaninchen-1) moidulo Versuchskaninchen
-      let zwischenergebnis = 1;
+        for (let i = 0; i < this.versuchskaninchen - 1; i++) {
 
-      for (let i = 0; i < this.versuchskaninchen - 1; i++) {
+          zwischenergebnis = zwischenergebnis * zeuge;
+          zwischenergebnis = zwischenergebnis % this.versuchskaninchen;
+        }
+        if (zwischenergebnis === 1) {
+          //this.ergebnis += ' Zeuge ' + zeuge + ': OK ';
 
-        zwischenergebnis = zwischenergebnis * zeuge;
+        } else {
+          //this.ergebnis += ' Zeuge ' + zeuge + ': Nicht OK. ';
+          endergebnis = false;
+          zeuge = this.anzahl + 2;
+
+        }
       }
-      zwischenergebnis = zwischenergebnis % this.versuchskaninchen;
-      if (zwischenergebnis === 1) {
-       this.ergebnis += ' Zeuge ' + zeuge + ': OK ';
 
+      if (endergebnis === true) {
+
+        this.ergebnis = 'Die Zahl ' + this.versuchskaninchen + ' ist wahrscheinlich eine Primzahl. '
       } else {
-        //this.ergebnis += 'Die Zahl ' + this.versuchskaninchen + ' ist laut Zeuge' + zeuge + ' keine Primzahl.';
-        endergebnis = false;
-        zeuge = this.anzahl + 2 ;
-
+        this.ergebnis = 'Die Zahl ' + this.versuchskaninchen + ' ist keine Primzahl. '
       }
     }
-
-    if(endergebnis === true){
-
-      this.ergebnis += 'Die Zahl ' + this.versuchskaninchen + ' ist wahrscheinlich eine Primzahl. '
-    }else{
-      this.ergebnis += 'Die Zahl ' + this.versuchskaninchen + ' ist keine Primzahl. '
-    }
-       
 
   }
 

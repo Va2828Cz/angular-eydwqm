@@ -1,8 +1,9 @@
 #hintergrundf{
 
   width: 400px;
-  height: 200px;
+  height: 50px;
   background-color: #58D3F7;
+  font-size: 22;
 }
 #i_zahl{
     background-color: #81F7F3;

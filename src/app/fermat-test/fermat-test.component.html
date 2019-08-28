@@ -3,11 +3,11 @@
 <p id= "#hintergrundf" >
 </p>
 <form>
- Zu testende Primzahl: <input name="versuchskaninchen" [(ngModel)]="versuchskaninchen" />
+ Zu testende Primzahl: <input name="versuchskaninchen" [(ngModel)]="versuchskaninchen" id="i_zahl"  />
 
 <br/>
 
- Durchführanzahl <input name="anzahl" [(ngModel)]="anzahl" />
+ Durchführanzahl <input name="anzahl" [(ngModel)]="anzahl" id="i_anzahl" />
  <br/>
  <button (click)="fermattest()" >Prüfdurchgang starten</button>
 </form>
